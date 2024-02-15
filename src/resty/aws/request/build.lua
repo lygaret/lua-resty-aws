@@ -188,7 +188,7 @@ local function build_request(operation, config, params)
           -- no location specified, but protocol is query, so it goes into query
           request.query[name] = param_value
         elseif member_config.type == "blob" then
-          request.body = param_value
+          body_tbl[name] = param_value
         else
           -- nowhere else to go, so put it in the body (for json and xml)
           body_tbl[name] = param_value
